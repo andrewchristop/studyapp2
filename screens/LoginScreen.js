@@ -26,6 +26,7 @@ export default class LoginScreen extends React.Component {
   render() {
     return (
       <View style={style.body}>
+        <Text>login</Text>
         <TextInput
           style={style.email}
           placeholder="Email"
@@ -39,6 +40,11 @@ export default class LoginScreen extends React.Component {
         ></TextInput>
         <TouchableOpacity onPress={() => this.handleLogin()}>
           <Text>Submit</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => this.props.navigation.navigate("Signup")}
+        >
+          <Text>Sign-up</Text>
         </TouchableOpacity>
       </View>
     );
