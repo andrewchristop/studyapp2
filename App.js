@@ -11,6 +11,7 @@ import { StyleSheet, Text, View } from "react-native";
 import LoginScreen from "./screens/LoginScreen.js";
 import SignupScreen from "./screens/SignupScreen.js";
 import MainNavigator from "./screens/MainNavigator.js";
+import SubjectScreen from "./screens/SubjectScreen.js";
 import { AppLoading } from "expo";
 
 var firebaseConfig = {
@@ -30,6 +31,7 @@ const RootStack = createSwitchNavigator(
     Login: LoginScreen,
     Signup: SignupScreen,
     Main: MainNavigator,
+    Subject: SubjectScreen,
   },
 
   {

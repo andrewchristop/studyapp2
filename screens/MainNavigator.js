@@ -43,7 +43,12 @@ export default class MainNavigator extends React.Component {
           data={this.state.topics}
           keyExtractor={(item) => item.key}
           renderItem={(item) => (
-            <TouchableOpacity style={style.row}>
+            <TouchableOpacity
+              style={style.row}
+              onPress={() =>
+                this.props.navigation.navigate("Subject", { subject: item.key })
+              }
+            >
               <Text>{item.key}</Text>
             </TouchableOpacity>
           )}
