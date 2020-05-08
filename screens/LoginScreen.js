@@ -38,7 +38,13 @@ export default class LoginScreen extends React.Component {
               uri: "https://i.imgur.com/C4ZtGk7.png",
             }}
           />
-          <Text style={{ fontSize: 23, fontWeight: "bold", paddingBottom: 20 }}>
+          <Text
+            style={{
+              fontSize: 23,
+              fontWeight: "bold",
+              paddingBottom: 20,
+            }}
+          >
             Login{"\n"}
             {"\n"}
             {"\n"}

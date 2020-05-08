@@ -10,8 +10,10 @@ import {
 } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 
-// const windowW = Dimensions.get("window").width;
-// const windowH = Dimensions.get("screen").height;
+/* 
+  const windowW = Dimensions.get("window").width;
+  const windowH = Dimensions.get("screen").height;
+*/
 
 export default class MainNavigator extends React.Component {
   state = {
@@ -35,14 +37,33 @@ export default class MainNavigator extends React.Component {
   }
   render() {
     return (
-      <View>
-        <Text>Choose Topic</Text>
+      <View style={style.main}>
+        <Text style={style.title}>Choose Topic</Text>
         <FlatList
           data={this.state.topics}
           keyExtractor={(item) => item.key}
-          renderItem={(item) => <Text>{item.key}</Text>}
+          renderItem={(item) => (
+            <TouchableOpacity style={style.row}>
+              <Text>{item.key}</Text>
+            </TouchableOpacity>
+          )}
         ></FlatList>
       </View>
     );
   }
 }
+
+const style = StyleSheet.create({
+  main: {
+    flex: 1,
+    alignItems: "center",
+  },
+  title: {
+    fontSize: 40,
+  },
+  row: {
+    padding: 20,
+    borderWidth: 1,
+    borderColor: "black",
+  },
+});
